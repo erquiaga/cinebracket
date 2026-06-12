@@ -1,0 +1,101 @@
+.chartOuter {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 62vh;
+  border-radius: 12px;
+  border: 1px solid #e8dfc8;
+  background: #fdf9f0;
+  padding: 20px;
+}
+
+.connectorSvg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.colHeader {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  padding-left: 2px;
+}
+
+.colLabel {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-warm);
+}
+
+.movieBox {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: #faf7ee;
+  border: 1px solid #ddd6be;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.movieBoxWon {
+  border-color: #d4b870;
+}
+
+.movieBoxChampion {
+  background: #fff8ee;
+  border-color: var(--accent);
+}
+
+.movieBoxLost {
+  opacity: 0.28;
+}
+
+.posterMini {
+  width: 14px;
+  height: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.posterMiniImg {
+  object-fit: cover;
+}
+
+.movieName {
+  font-size: 10px;
+  font-weight: 400;
+  color: #3a3820;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  line-height: 1;
+}
+
+.movieNameWon {
+  font-weight: 600;
+}
+
+.movieNameChampion {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.movieNameLost {
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.champIcon {
+  font-size: 10px;
+  flex-shrink: 0;
+}

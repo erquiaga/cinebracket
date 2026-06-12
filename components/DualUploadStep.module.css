@@ -1,0 +1,53 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.uploadsRow {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.uploadCol {
+  flex: 1 1 280px;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.colLabel {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.statusRow {
+  text-align: center;
+}
+
+.sharedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cream);
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.sharedCount {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.sharedCheck {
+  color: var(--green);
+  font-weight: 700;
+}

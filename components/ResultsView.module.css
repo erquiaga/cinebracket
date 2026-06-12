@@ -1,0 +1,138 @@
+.page {
+  min-height: 100vh;
+  padding: 48px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.announcement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.announcementLabel {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-warm);
+}
+
+.winnerTitle {
+  /* Typography handled via inline style prop to reliably override Ant Design */
+}
+
+.winnerMeta {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.winnerCard {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 760px;
+}
+
+.posterWrap {
+  width: 220px;
+  aspect-ratio: 2 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 12px 48px rgba(255, 128, 0, 0.25);
+  border: 3px solid var(--orange);
+  position: relative;
+  background: #e8e0c4;
+}
+
+.posterFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.posterFallbackText {
+  font-size: 20px;
+  font-weight: 700;
+  color: #6b5020;
+  text-align: center;
+}
+
+.winnerInfo {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.overview {
+  font-size: 15px;
+  color: #4a4220;
+  line-height: 1.7;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.genreTag {
+  font-size: 12px;
+  background: var(--cream-bg);
+  color: #6b5020;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-weight: 600;
+}
+
+.rating {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.bracketRecap {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.recapTitle {
+  /* Typography handled via inline style prop to reliably override Ant Design */
+}
+
+.playAgainBtn {
+  background: var(--orange) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+}
+
+.homeBtn {
+  border: 1.5px solid var(--gold) !important;
+  color: var(--text-muted) !important;
+  border-radius: 8px !important;
+}
+
+.posterImg {
+  object-fit: cover;
+}

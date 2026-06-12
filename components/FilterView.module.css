@@ -1,0 +1,132 @@
+.page {
+  min-height: 100vh;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.header {
+  width: 100%;
+  max-width: 600px;
+}
+
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  /* Typography handled via inline style prop to reliably override Ant Design */
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.filterArea {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filterBar {
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterBarLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.filterLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.filterCount {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.activeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ctaArea {
+  width: 100%;
+  max-width: 600px;
+}
+
+.navBtn {
+  color: var(--text-muted) !important;
+  padding-left: 0 !important;
+}
+
+.accentSpan {
+  color: var(--accent);
+}
+
+.adjustBtn {
+  border: 1.5px solid var(--accent) !important;
+  color: var(--accent) !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+}
+
+.activeTag {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+}
+
+.clearTag {
+  background: transparent !important;
+  border: 1px dashed var(--gold) !important;
+  color: var(--text-muted) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+}
+
+.filterError {
+  color: #ff4d4f;
+  font-size: 14px;
+}
+
+.ctaBtn {
+  width: 100% !important;
+  height: 48px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+.ctaBtnActive {
+  background: var(--accent) !important;
+  border: 2px solid var(--accent) !important;
+  color: #fff !important;
+}
+
+.ctaBtnInactive {
+  background: transparent !important;
+  border: 2px solid var(--gold) !important;
+  color: var(--text-muted) !important;
+}

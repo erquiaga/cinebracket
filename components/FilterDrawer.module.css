@@ -1,0 +1,55 @@
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tagGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  margin-bottom: 6px !important;
+  font-weight: 400 !important;
+  transition: all 0.15s ease !important;
+  border: 1.5px solid var(--gold) !important;
+  background: transparent !important;
+  color: var(--text-dark) !important;
+}
+
+.tagActive {
+  font-weight: 600 !important;
+  border-color: var(--accent) !important;
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+.drawerTitle {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.divider {
+  margin: 0 0 20px !important;
+  border-color: var(--border-divider) !important;
+}
+
+.applyBtn {
+  width: 100% !important;
+  height: 44px !important;
+  background: var(--accent) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}

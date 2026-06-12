@@ -1,0 +1,78 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #FEFCF5;
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 24px rgba(100, 90, 40, 0.1);
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.hint {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.errorText {
+  font-size: 13px;
+  color: #e03030;
+}
+
+.successText {
+  font-size: 13px;
+  color: #00a040;
+}
+
+.homeLink {
+  font-size: 13px;
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.homeLink:hover {
+  color: #e06000;
+}
+
+.spinner {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.formInput {
+  border-radius: 8px !important;
+}
+
+.submitBtn {
+  background: var(--orange) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  height: 44px !important;
+}

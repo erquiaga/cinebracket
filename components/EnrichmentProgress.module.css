@@ -1,0 +1,71 @@
+.root {
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.doneState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.doneTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.doneSubtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.progressState {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.progressTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.progressFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressText {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.currentMovie {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 240px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doneIcon {
+  font-size: 48px;
+  color: var(--accent);
+}
+
+.progressBar {
+  width: 100%;
+}

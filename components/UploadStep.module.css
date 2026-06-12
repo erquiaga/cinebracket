@@ -1,0 +1,86 @@
+.statusBox {
+  border-radius: 12px;
+  padding: 32px 24px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.statusBox.success {
+  border: 2px solid var(--green);
+}
+
+.statusBox.error {
+  border: 2px solid #ff4d4f;
+}
+
+.statusTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.statusMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.statusError {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.draggerInner {
+  padding: 24px 16px;
+}
+
+.draggerLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: block;
+}
+
+.draggerHint {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+}
+
+.dragger {
+  background: var(--cream) !important;
+  border: 2px dashed var(--gold) !important;
+  border-radius: 12px !important;
+}
+
+.uploadIcon {
+  font-size: 40px;
+  color: var(--orange);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.uploadIconParsing {
+  color: var(--gold);
+}
+
+.successIcon {
+  font-size: 36px;
+  color: var(--green);
+}
+
+.errorIcon {
+  font-size: 36px;
+  color: #ff4d4f;
+}
+
+.changeFileBtn {
+  margin-top: 8px !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--text-muted) !important;
+  background: transparent !important;
+}

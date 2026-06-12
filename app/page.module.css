@@ -1,0 +1,167 @@
+.main {
+  min-height: 100vh;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.headerArea {
+  width: 100%;
+  max-width: 560px;
+}
+
+.headerAreaWide {
+  width: 100%;
+  max-width: 880px;
+}
+
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  /* Typography handled via inline style prop to reliably override Ant Design */
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.contentArea {
+  width: 100%;
+  max-width: 560px;
+}
+
+.contentAreaWide {
+  width: 100%;
+  max-width: 880px;
+}
+
+/* Cached watchlist banner */
+.cachedBanner {
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cachedBannerSolo {
+  background: #fff8ee;
+  border: 1.5px solid var(--orange);
+}
+
+.cachedBannerDuo {
+  background: #f0fff6;
+  border: 1.5px solid var(--green);
+}
+
+.cachedTitle {
+  font-weight: 700;
+  color: var(--text-dark);
+  display: block;
+}
+
+.cachedDate {
+  font-size: 12px;
+}
+
+.cachedDateSolo {
+  color: var(--text-warm);
+}
+
+.cachedDateDuo {
+  color: #00a040;
+}
+
+.bannerActions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Sign-in note */
+.signInNote {
+  font-size: 12px;
+  color: var(--text-warm);
+}
+
+/* Enrich page */
+.enrichReady {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* Back button (standalone, outside navRow) */
+.backBtn {
+  color: var(--text-muted) !important;
+  padding-left: 0 !important;
+  margin-bottom: 32px !important;
+}
+
+/* Page title accent spans */
+.soloAccent { color: var(--orange); }
+.duoAccent { color: var(--green); }
+
+/* Primary action buttons */
+.primaryBtnOrange {
+  background: var(--orange) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.primaryBtnGreen {
+  background: var(--green) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+/* Secondary / upload new button */
+.secondaryBtn {
+  border: 1px solid var(--gold) !important;
+  color: var(--text-muted) !important;
+  border-radius: 8px !important;
+}
+
+/* Continue / CTA button */
+.continueBtn {
+  width: 100% !important;
+  height: 48px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+.continueBtnOrangeActive {
+  background: var(--orange) !important;
+  border: 2px solid var(--orange) !important;
+  color: #fff !important;
+}
+
+.continueBtnGreenActive {
+  background: var(--green) !important;
+  border: 2px solid var(--green) !important;
+  color: #fff !important;
+}
+
+.continueBtnInactive {
+  background: transparent !important;
+  border: 2px solid var(--gold) !important;
+  color: var(--text-muted) !important;
+}
+
+.errorText {
+  color: #ff4d4f;
+  font-size: 14px;
+}

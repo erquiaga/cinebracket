@@ -1,0 +1,175 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+  padding: 112px 24px 96px;
+  width: 100%;
+  position: relative;
+}
+
+.authBadge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 48px);
+}
+
+.helpBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+  line-height: 1;
+}
+
+.helpBtn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.authEmail {
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.logo {
+  /* Typography handled via inline style prop to reliably override Ant Design */
+}
+
+.logoOrange {
+  color: var(--orange);
+}
+
+.logoGreen {
+  color: var(--green);
+}
+
+.tagline {
+  font-size: 18px;
+  color: var(--text-muted);
+  display: block;
+}
+
+.cards {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 720px;
+}
+
+.card {
+  width: 320px;
+  background: var(--cream) !important;
+  border: 1px solid var(--gold) !important;
+  box-shadow: 0 4px 16px rgba(100, 90, 40, 0.12) !important;
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cardBody {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardLabel {
+  margin: 0 0 4px;
+  color: var(--text-dark);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cardDescription {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.signOutBtn {
+  color: var(--text-warm) !important;
+  font-size: 12px !important;
+  padding: 0 8px !important;
+}
+
+.signInBtn {
+  border: 1px solid var(--gold) !important;
+  color: var(--text-muted) !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+}
+
+.modeIcon {
+  color: var(--cta);
+  font-size: 40px;
+}
+
+.modeTagline {
+  color: var(--cta) !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+}
+
+.getStartedBtn {
+  margin-top: 8px !important;
+  background: transparent !important;
+  border: 1.5px solid var(--cta) !important;
+  color: var(--cta) !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+}
+
+.tmdbFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--gold);
+  width: 100%;
+  max-width: 720px;
+}
+
+.tmdbNotice {
+  font-size: 11px;
+  color: var(--text-warm);
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 660px) {
+  .card {
+    width: calc(100vw - 48px) !important;
+    max-width: 360px !important;
+  }
+}
