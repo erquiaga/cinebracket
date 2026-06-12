@@ -56,7 +56,6 @@ export default function EnrichmentProgress({
               strokeColor={accentColor}
               railColor='#e8e0c4'
               showInfo={false}
-              size={10}
               className={styles.progressBar}
             />
             <div className={styles.progressFooter}>

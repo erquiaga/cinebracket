@@ -35,6 +35,15 @@
   font-size: 13px !important;
 }
 
+.bracketProgress {
+  width: 100%;
+}
+
+.bracketProgress :global(.ant-progress-inner),
+.bracketProgress :global(.ant-progress-bg) {
+  height: 6px !important;
+}
+
 .progressMeta {
   font-size: 12px;
   color: var(--text-muted);

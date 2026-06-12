@@ -69,3 +69,8 @@
 .progressBar {
   width: 100%;
 }
+
+.progressBar :global(.ant-progress-inner),
+.progressBar :global(.ant-progress-bg) {
+  height: 10px !important;
+}

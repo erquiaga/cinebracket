@@ -111,7 +111,7 @@ export default function BracketView({
           strokeColor={accentColor}
           railColor='#e8e0c4'
           showInfo={false}
-          size={6}
+          className={styles.bracketProgress}
         />
         <Text className={styles.progressMeta}>
           Round {roundNumber} of {totalRounds} · {completedMatchups} of{' '}
