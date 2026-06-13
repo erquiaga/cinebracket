@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# cinebracket
 
-## Getting Started
+Pick your next movie the only fair way: a bracket tournament.
 
-First, run the development server:
+Upload your Letterboxd watchlist CSV and cinebracket seeds a single-elimination bracket from your list. You pick the winner of each matchup until one film is left standing. That's your next watch.
+
+Live at [cinebracket.vercel.app](https://cinebracket.vercel.app)
+
+## Modes
+
+**Solo** -- upload your own watchlist and run the bracket yourself.
+
+**Duo** -- upload two watchlists. The bracket runs from the films you both have on your lists, so the winner is something you both actually want to see.
+
+## Features
+
+- Pulls posters, ratings, genres, and runtime from TMDB for every film in your list
+- Filter by genre, runtime, and minimum rating before the bracket starts
+- Sign in to save your watchlist so you skip the upload and enrichment step next time
+- Forgot password flow via email
+- Results page shows the full bracket chart after the tournament
+
+## Stack
+
+- [Next.js](https://nextjs.org) (App Router)
+- [Ant Design](https://ant.design) for UI components
+- [Framer Motion](https://www.framer.com/motion) for animations
+- [Supabase](https://supabase.com) for auth and watchlist storage
+- [TMDB API](https://www.themoviedb.org/documentation/api) for movie data
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You need a `.env.local` file with the following:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Getting a Letterboxd CSV
 
-To learn more about Next.js, take a look at the following resources:
+In Letterboxd, go to **Settings > Import & Export > Export Your Data**. This gives you a zip file. The file you want is `watchlist.csv`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Attribution
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This product uses the TMDB API but is not endorsed or certified by TMDB.
