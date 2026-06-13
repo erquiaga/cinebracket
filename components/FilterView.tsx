@@ -74,6 +74,7 @@ export default function FilterView({
       'cinebracket_bracket_state',
       JSON.stringify(createBracket(filtered)),
     );
+    sessionStorage.setItem('cinebracket_mode', bracketHref.startsWith('/duo') ? 'duo' : 'solo');
     router.push(bracketHref);
   }
 

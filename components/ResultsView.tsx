@@ -102,15 +102,20 @@ export default function ResultsView() {
             <Button
               type='primary'
               onClick={() => {
-                sessionStorage.clear();
-                router.push('/');
+                const mode = sessionStorage.getItem('cinebracket_mode') ?? 'solo';
+                sessionStorage.removeItem('cinebracket_bracket_state');
+                sessionStorage.removeItem('cinebracket_winner');
+                router.push(`/${mode}/filter`);
               }}
               className={styles.playAgainBtn}
             >
               Play Again
             </Button>
             <Button
-              onClick={() => router.push('/')}
+              onClick={() => {
+                sessionStorage.clear();
+                router.push('/');
+              }}
               className={styles.homeBtn}
             >
               Back to Home
