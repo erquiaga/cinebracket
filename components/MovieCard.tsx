@@ -24,6 +24,7 @@ export default function MovieCard({
   lost = false,
 }: MovieCardProps) {
   const [synopsisOpen, setSynopsisOpen] = useState(false);
+  const [streamingOpen, setStreamingOpen] = useState(false);
 
   const cardClass = [
     styles.card,
@@ -95,6 +96,36 @@ export default function MovieCard({
                   style={{ overflowY: 'auto' }}
                 >
                   <Text className={styles.synopsisText}>{movie.overview}</Text>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        )}
+        {movie.streamingProviders && movie.streamingProviders.length > 0 && (
+          <div>
+            <button
+              className={styles.synopsisToggle}
+              onClick={(e) => {
+                e.stopPropagation();
+                setStreamingOpen((o) => !o);
+              }}
+            >
+              Streaming {streamingOpen ? '▴' : '▾'}
+            </button>
+            <AnimatePresence initial={false}>
+              {streamingOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.22, ease: 'easeInOut' as const }}
+                  style={{ overflow: 'hidden' }}
+                >
+                  <div className={styles.streamingList}>
+                    {movie.streamingProviders.map((p) => (
+                      <span key={p} className={styles.streamingTag}>{p}</span>
+                    ))}
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>

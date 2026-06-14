@@ -138,6 +138,13 @@
   border-radius: 8px !important;
 }
 
+.letterboxdBtn {
+  border: 1.5px solid #00c030 !important;
+  color: #00a028 !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+
 .homeBtn {
   border: 1.5px solid var(--gold) !important;
   color: var(--text-muted) !important;

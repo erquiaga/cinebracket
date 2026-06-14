@@ -135,6 +135,16 @@ export default function ResultsView() {
             >
               Play Again
             </Button>
+            {winner.letterboxdUri && (
+              <Button
+                href={winner.letterboxdUri}
+                target='_blank'
+                rel='noopener noreferrer'
+                className={styles.letterboxdBtn}
+              >
+                Open in Letterboxd
+              </Button>
+            )}
             <Button
               onClick={() => {
                 sessionStorage.clear();

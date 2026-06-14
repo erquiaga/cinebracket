@@ -115,6 +115,22 @@
   padding-top: 6px;
 }
 
+.streamingList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-top: 6px;
+}
+
+.streamingTag {
+  font-size: 11px;
+  background: #e8f5ee;
+  color: #00702a;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500;
+}
+
 .genres {
   display: flex;
   flex-wrap: wrap;
