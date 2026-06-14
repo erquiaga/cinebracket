@@ -1,14 +1,6 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Mexcellent3D';
-  src: url('/fonts/Mexcellent%203d.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'MexcellentRg';
   src: url('/fonts/MexcellentRg.otf') format('opentype');
   font-weight: normal;

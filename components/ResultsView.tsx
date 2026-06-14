@@ -13,29 +13,40 @@ import styles from './ResultsView.module.css';
 
 const { Title, Text } = Typography;
 
+const ACCENT: Record<string, string> = { duo: '#00e054', solo: '#ff8000' };
+
 export default function ResultsView() {
   const router = useRouter();
   const [winner, setWinner] = useState<Movie | null>(null);
   const [bracketState, setBracketState] = useState<BracketState | null>(null);
+  const [accentColor, setAccentColor] = useState('#ff8000');
+  const [downloading, setDownloading] = useState(false);
   const bracketRef = useRef<HTMLDivElement>(null);
 
   async function downloadBracket() {
     if (!bracketRef.current) return;
-    const png = await toPng(bracketRef.current, { cacheBust: true, backgroundColor: '#fafae8' });
-    const link = document.createElement('a');
-    link.download = 'cinebracket.png';
-    link.href = png;
-    link.click();
+    setDownloading(true);
+    try {
+      const png = await toPng(bracketRef.current, { cacheBust: true, backgroundColor: '#fafae8' });
+      const link = document.createElement('a');
+      link.download = 'cinebracket.png';
+      link.href = png;
+      link.click();
+    } finally {
+      setDownloading(false);
+    }
   }
 
   useEffect(() => {
     const rawWinner = sessionStorage.getItem('cinebracket_winner');
     const rawState = sessionStorage.getItem('cinebracket_bracket_state');
+    const mode = sessionStorage.getItem('cinebracket_mode') ?? 'solo';
     if (!rawWinner) {
       router.replace('/');
       return;
     }
     setWinner(JSON.parse(rawWinner));
+    setAccentColor(ACCENT[mode] ?? '#ff8000');
     if (rawState) setBracketState(JSON.parse(rawState));
   }, [router]);
 
@@ -57,7 +68,7 @@ export default function ResultsView() {
             fontFamily: 'var(--font-folio), sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.5rem)',
             fontWeight: 'normal',
-            color: '#ff8000',
+            color: accentColor,
             margin: 0,
             letterSpacing: '0.03em',
           }}
@@ -75,6 +86,7 @@ export default function ResultsView() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' as const }}
         className={styles.winnerCard}
+        style={{ '--accent': accentColor } as React.CSSProperties}
       >
         <div className={styles.posterWrap}>
           {winner.poster ? (
@@ -161,13 +173,14 @@ export default function ResultsView() {
             <Button
               icon={<DownloadOutlined />}
               onClick={downloadBracket}
+              loading={downloading}
               className={styles.downloadBtn}
             >
-              Download
+              {downloading ? 'Generating...' : 'Download'}
             </Button>
           </div>
           <div ref={bracketRef} className={styles.bracketCapture}>
-            <BracketChart state={bracketState} accentColor='#ff8000' />
+            <BracketChart state={bracketState} accentColor={accentColor} />
           </div>
         </motion.div>
       )}
