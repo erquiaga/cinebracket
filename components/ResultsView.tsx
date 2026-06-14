@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Button, Typography } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
+import { toPng } from 'html-to-image';
 import BracketChart from '@/components/BracketChart';
 import type { BracketState, Movie } from '@/types';
 import styles from './ResultsView.module.css';
@@ -15,6 +17,16 @@ export default function ResultsView() {
   const router = useRouter();
   const [winner, setWinner] = useState<Movie | null>(null);
   const [bracketState, setBracketState] = useState<BracketState | null>(null);
+  const bracketRef = useRef<HTMLDivElement>(null);
+
+  async function downloadBracket() {
+    if (!bracketRef.current) return;
+    const png = await toPng(bracketRef.current, { cacheBust: true, backgroundColor: '#fafae8' });
+    const link = document.createElement('a');
+    link.download = 'cinebracket.png';
+    link.href = png;
+    link.click();
+  }
 
   useEffect(() => {
     const rawWinner = sessionStorage.getItem('cinebracket_winner');
@@ -131,21 +143,32 @@ export default function ResultsView() {
           transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' as const }}
           className={styles.bracketRecap}
         >
-          <Title
-            level={3}
-            className={styles.recapTitle}
-            style={{
-              fontFamily: 'var(--font-folio), sans-serif',
-              fontWeight: 'normal',
-              fontSize: '1.4rem',
-              color: '#1c1a10',
-              marginBottom: 20,
-              letterSpacing: '0.03em',
-            }}
-          >
-            How it played out
-          </Title>
-          <BracketChart state={bracketState} accentColor='#ff8000' />
+          <div className={styles.recapHeader}>
+            <Title
+              level={3}
+              className={styles.recapTitle}
+              style={{
+                fontFamily: 'var(--font-folio), sans-serif',
+                fontWeight: 'normal',
+                fontSize: '1.4rem',
+                color: '#1c1a10',
+                margin: 0,
+                letterSpacing: '0.03em',
+              }}
+            >
+              How it played out
+            </Title>
+            <Button
+              icon={<DownloadOutlined />}
+              onClick={downloadBracket}
+              className={styles.downloadBtn}
+            >
+              Download
+            </Button>
+          </div>
+          <div ref={bracketRef} className={styles.bracketCapture}>
+            <BracketChart state={bracketState} accentColor='#ff8000' />
+          </div>
         </motion.div>
       )}
     </main>
