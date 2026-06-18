@@ -30,6 +30,11 @@
   color: var(--text-muted);
 }
 
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .vsWrapper {
   display: flex;
   flex-direction: column;

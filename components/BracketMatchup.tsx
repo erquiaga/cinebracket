@@ -51,23 +51,27 @@ export default function BracketMatchup({
         </div>
 
         <div className='matchup-row'>
-          <MovieCard
-            movie={movieA}
-            onPick={() => handlePick(movieA)}
-            picked={picked?.name === movieA.name}
-            lost={picked !== null && picked.name !== movieA.name}
-          />
+          <div className={styles.cardWrapper}>
+            <MovieCard
+              movie={movieA}
+              onPick={() => handlePick(movieA)}
+              picked={picked?.name === movieA.name}
+              lost={picked !== null && picked.name !== movieA.name}
+            />
+          </div>
 
           <div className={styles.vsWrapper}>
             <Text className={styles.vsLabel}>VS</Text>
           </div>
 
-          <MovieCard
-            movie={movieB}
-            onPick={() => handlePick(movieB)}
-            picked={picked?.name === movieB.name}
-            lost={picked !== null && picked.name !== movieB.name}
-          />
+          <div className={styles.cardWrapper}>
+            <MovieCard
+              movie={movieB}
+              onPick={() => handlePick(movieB)}
+              picked={picked?.name === movieB.name}
+              lost={picked !== null && picked.name !== movieB.name}
+            />
+          </div>
         </div>
 
         {!picked && (
